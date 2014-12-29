@@ -20,7 +20,7 @@ gem 'html5_validators'
 
 #### CSS
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'less-rails'
 
 #### Javascript
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -43,6 +43,9 @@ gem 'quiet_assets'
 gem 'rails-flog'
 
 #### else
+gem 'twitter-bootswatch-rails', '~> 3.1.1'
+gem 'twitter-bootswatch-rails-helpers'
+
 # Presenter Layer
 gem 'draper'
 
