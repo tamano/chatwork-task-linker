@@ -63,13 +63,13 @@ gem 'devise'
 gem 'kakurenbo'
 
 # crontab管理
-#gem 'whenever',  :require => false
+gem 'whenever',  :require => false
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
 # Rails/Rack Profiler
-#gem 'speed_gun'
+gem 'speed_gun'
 
 
 group :development,  :test do
