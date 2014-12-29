@@ -4,13 +4,13 @@ ruby '2.1.5'
 
 gem 'rails', '4.2.0'
 
-gem 'sqlite3', :group => [:development,  :test]
-gem 'mysql2', :group => [:production]
+gem 'sqlite3', group: [:development,  :test]
+gem 'mysql2', group: [:production]
 
 #### HTML
 # Haml
 gem 'haml-rails'
-gem 'erb2haml', :group => [:development]
+gem 'erb2haml', group: [:development]
 
 # Form Builders
 gem 'simple_form'
@@ -63,7 +63,7 @@ gem 'devise'
 gem 'kakurenbo'
 
 # crontab管理
-gem 'whenever',  :require => false
+gem 'whenever',  require: false
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
@@ -71,25 +71,23 @@ gem 'bcrypt', '~> 3.1.7'
 # Rails/Rack Profiler
 gem 'speed_gun'
 
-
 group :development,  :test do
-
   # Rspec
   gem 'rspec-rails'
   gem 'spring-commands-rspec'
 
   # fixtureの代わり
-  gem "factory_girl_rails"
+  gem 'factory_girl_rails'
   gem 'database_cleaner',  github: 'bmabey/database_cleaner'
 
-  #gem 'capistrano-rails'
-  #gem 'cucumber-rails',  require: false,  git: 'https://github.com/cucumber/cucumber-rails.git'
-  #gem 'capybara',  git: 'git://github.com/jnicklas/capybara.git'
+  # gem 'capistrano-rails'
+  # gem 'cucumber-rails',  require: false,  git: 'https://github.com/cucumber/cucumber-rails.git'
+  # gem 'capybara',  git: 'git://github.com/jnicklas/capybara.git'
 
   gem 'guard-rspec'
   gem 'guard-cucumber'
   # OSXの場合のみ、ファイル変更検知のため（それ以外の環境ではポーリングになる）
-  gem 'rb-fsevent',  :require => true if RUBY_PLATFORM =~ /darwin/i
+  gem 'rb-fsevent',  require: true if RUBY_PLATFORM =~ /darwin/i
 
   # Rails application preloader
   gem 'spring'
@@ -103,7 +101,7 @@ group :development,  :test do
   # デバッカー
   gem 'pry-byebug'
   gem 'pry-stack_explorer'
-  #gem 'pry-debugger'
+  # gem 'pry-debugger'
 
   # Pryでの便利コマンド
   gem 'pry-doc'
