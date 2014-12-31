@@ -61,6 +61,8 @@ gem 'kaminari'
 
 # 認証
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
 
 # 論理削除
 gem 'kakurenbo'
