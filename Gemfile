@@ -93,7 +93,7 @@ group :development,  :test do
   # gem 'capybara',  git: 'git://github.com/jnicklas/capybara.git'
 
   gem 'guard-rspec'
-  gem 'guard-cucumber'
+  # gem 'guard-cucumber'
   gem 'guard-rubocop'
   gem 'guard-livereload', require: false
   gem 'terminal-notifier-guard'
