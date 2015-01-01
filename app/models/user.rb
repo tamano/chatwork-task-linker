@@ -1,3 +1,4 @@
+# User class
 class User < ActiveRecord::Base
   devise :database_authenticatable, :omniauthable, :registerable,
          :rememberable, :trackable, :timeoutable
@@ -15,5 +16,4 @@ class User < ActiveRecord::Base
     end
     user
   end
-
 end

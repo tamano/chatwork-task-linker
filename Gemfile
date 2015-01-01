@@ -124,5 +124,4 @@ group :development,  :test do
   # PryでのSQLの結果を綺麗に表示
   gem 'hirb'
   gem 'hirb-unicode'
-
 end

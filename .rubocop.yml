@@ -14,6 +14,7 @@ AllCops:
     - 'vendor/**/*'
     - 'spec/spec_helper.rb'
     - 'spec/rails_helper.rb'
+    - 'Guardfile'
     #- !ruby/regexp /old_and_unused\.rb$/
 
 # Configuration parameters: CountComments.
@@ -27,6 +28,10 @@ Metrics/LineLength:
 # Configuration parameters: CountComments.
 Metrics/MethodLength:
   Max: 30
+
+Metrics/AbcSize:
+  Enabled: true
+  Max: 17
 
 Style/AsciiComments:
   Enabled: false
@@ -54,3 +59,6 @@ Style/SignalException:
 
 Style/WordArray:
   MinSize: 10
+
+ClassAndModuleChildren:
+  EnforcedStyle: compact
