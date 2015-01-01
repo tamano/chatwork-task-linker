@@ -85,12 +85,18 @@ group :development,  :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner',  github: 'bmabey/database_cleaner'
 
+  # コーディング規約
+  gem 'rubocop'
+
   # gem 'capistrano-rails'
   # gem 'cucumber-rails',  require: false,  git: 'https://github.com/cucumber/cucumber-rails.git'
   # gem 'capybara',  git: 'git://github.com/jnicklas/capybara.git'
 
   gem 'guard-rspec'
   gem 'guard-cucumber'
+  gem 'guard-rubocop'
+  gem 'terminal-notifier-guard'
+
   # OSXの場合のみ、ファイル変更検知のため（それ以外の環境ではポーリングになる）
   gem 'rb-fsevent',  require: true if RUBY_PLATFORM =~ /darwin/i
 
@@ -118,5 +124,4 @@ group :development,  :test do
   gem 'hirb'
   gem 'hirb-unicode'
 
-  gem 'rubocop'
 end
