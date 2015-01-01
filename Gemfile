@@ -95,6 +95,7 @@ group :development,  :test do
   gem 'guard-rspec'
   gem 'guard-cucumber'
   gem 'guard-rubocop'
+  gem 'guard-livereload', require: false
   gem 'terminal-notifier-guard'
 
   # OSXの場合のみ、ファイル変更検知のため（それ以外の環境ではポーリングになる）
