@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :omniauthable, :registerable,
          :rememberable, :trackable, :timeoutable
 
+  has_one :setting, class_name: :UserSetting
+
   def self.find_for_google_oauth2(auth)
     user = User.where(email: auth.info.email).first
 
