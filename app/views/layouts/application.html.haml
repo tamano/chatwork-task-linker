@@ -6,13 +6,22 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    %header
-      %nav
-        - if user_signed_in?
-          = "Logged in as " + current_user.name
-          = link_to "Log Out", destroy_user_session_path, method: :delete
-        - else
-          = link_to "Log In with Google", user_omniauth_authorize_path(:google_oauth2)
-    %p.notice= notice
-    %p.alert= alert
-    = yield
+    #header.navbar.navbar-default{:role => "navigation"}
+      .container
+        .navbar-header
+          %a.navbar-brand{:href => "/"} ChatworkGcalTask
+        #navbar-main
+          %ul.nav.navbar-nav.navbar-right
+            - if user_signed_in?
+              %li.dropdown
+                = link_to current_user.name, '#', {id: 'profile', class: 'dropdown-toggle', 'data-toggle' => 'dropdown'}
+                %ul.dropdown-menu{'aria-labelledby' => 'profile'}
+                  %li= link_to "Log out", destroy_user_session_path, method: :delete
+            - else
+              %li= link_to "Log in with Google", user_omniauth_authorize_path(:google_oauth2)
+
+    .container
+      .row.row-offcanvas
+        .col-sm-12
+          #content
+            = content_for?(:content) ? yield(:content) : yield

@@ -1,2 +1,9 @@
 %h1 Home#index
-%p Find me in app/views/home/index.html.haml
+
+- if flash[:notice]
+  .alert.alert-success
+    = flash[:notice]
+- if flash[:alert]
+  .alert.alert-danger
+    = flash[:alert]
+
