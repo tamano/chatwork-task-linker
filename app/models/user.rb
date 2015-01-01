@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
          :rememberable, :trackable, :timeoutable
 
   has_one :setting, class_name: :UserSetting
+  has_many :tasks
 
   def self.find_for_google_oauth2(auth)
     user = User.where(email: auth.info.email).first
