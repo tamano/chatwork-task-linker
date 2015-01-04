@@ -10,20 +10,30 @@ class User < ActiveRecord::Base
     user = User.where(email: auth.info.email).first
 
     if user
-      user.token         = auth.credentials.token
-      user.refresh_token = auth.credentials.refresh_token
-      user.expires_at    = Time.at(auth.credentials.expires_at).to_datetime
-      user.save
+      user.update_google_oauth2_token(auth)
     else
-      user = User.create(name:          auth.info.name,
-                         provider:      auth.provider,
-                         uid:           auth.uid,
-                         email:         auth.info.email,
-                         token:         auth.credentials.token,
-                         refresh_token: auth.credentials.refresh_token,
-                         expires_at:    Time.at(auth.credentials.expires_at).to_datetime,
-                         password:      Devise.friendly_token[0, 20])
+      user = User.create_by_google_oauth2_auth(auth)
     end
     user
+  end
+
+  def update_google_oauth2_token(auth)
+    self.token         = auth.credentials.token
+    self.refresh_token = auth.credentials.refresh_token
+    self.expires_at    = Time.at(auth.credentials.expires_at).to_datetime
+    save
+  end
+
+  def self.create_by_google_oauth2_auth(auth)
+    User.create(
+      name:          auth.info.name,
+      provider:      auth.provider,
+      uid:           auth.uid,
+      email:         auth.info.email,
+      token:         auth.credentials.token,
+      refresh_token: auth.credentials.refresh_token,
+      expires_at:    Time.at(auth.credentials.expires_at).to_datetime,
+      password:      Devise.friendly_token[0, 20]
+    )
   end
 end
