@@ -1,3 +1,4 @@
+# Service about Task Control
 class TaskService
   @user = nil
 
@@ -6,10 +7,10 @@ class TaskService
   end
 
   def fetch_chatwork_tasks
-    return nil
+    nil
   end
 
   def update_gcal_tasks
-    return nil
+    nil
   end
 end
