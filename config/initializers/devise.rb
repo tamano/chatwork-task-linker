@@ -237,6 +237,8 @@ Devise.setup do |config|
     Rails.application.secrets.google_client_id,
     Rails.application.secrets.google_client_secret,
     {
+      access_type: 'offline',
+      prompt: 'consent',
       scope: 'userinfo.email,userinfo.profile,calendar'
     }
 

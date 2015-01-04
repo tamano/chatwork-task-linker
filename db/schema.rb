@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150101151029) do
+ActiveRecord::Schema.define(version: 20150104144217) do
 
   create_table "tasks", force: :cascade do |t|
-    t.integer  "user_id",          null: false
-    t.integer  "chatwork_task_id", null: false
+    t.integer  "user_id"
+    t.integer  "chatwork_task_id"
     t.integer  "limit_time"
     t.text     "body"
     t.datetime "created_at",       null: false
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 20150101151029) do
     t.string   "uid"
     t.string   "name"
     t.string   "token"
+    t.string   "refresh_token"
+    t.datetime "expires_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
