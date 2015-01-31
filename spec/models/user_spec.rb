@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
-
   describe 'expired?' do
     before :each do
       time_now = Time.local(2015, 1, 1, 0, 0, 0)
@@ -27,5 +25,4 @@ RSpec.describe User, type: :model do
       expect(user.expired?).to be_falsey
     end
   end
-
 end
