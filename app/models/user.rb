@@ -36,4 +36,8 @@ class User < ActiveRecord::Base
       password:      Devise.friendly_token[0, 20]
     )
   end
+
+  def expired?
+    expires_at < Time.now
+  end
 end
