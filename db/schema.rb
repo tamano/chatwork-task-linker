@@ -14,8 +14,8 @@
 ActiveRecord::Schema.define(version: 20150104144217) do
 
   create_table "tasks", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "chatwork_task_id"
+    t.integer  "user_id",          null: false
+    t.integer  "chatwork_task_id", null: false
     t.integer  "limit_time"
     t.text     "body"
     t.datetime "created_at",       null: false

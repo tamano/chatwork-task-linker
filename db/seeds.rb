@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+User.create(
+  id:      1,
+  name:    'シスボット',
+  setting: UserSetting.create(user_id: 1, chatwork_token: ENV['CHATWORK_SYSBOT_API_TOKEN'])
+)
