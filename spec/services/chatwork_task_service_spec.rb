@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe TaskService, type: :service do
+RSpec.describe ChatworkTaskService, type: :service do
   before :each do
     user = nil
-    @service = TaskService.new(user)
+    @service = ChatworkTaskService.new(user)
   end
 
   describe 'fetch_chatwork_tasks' do
