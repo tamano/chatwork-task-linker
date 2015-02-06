@@ -17,10 +17,4 @@ RSpec.describe ChatworkTaskService, type: :service do
       expect(@service.fetch_my_chatwork_tasks).not_to be_nil
     end
   end
-
-  describe 'update_gcal_tasks' do
-    it 'does not retrun nil' do
-      expect(@service.update_gcal_tasks).not_to be_nil
-    end
-  end
 end

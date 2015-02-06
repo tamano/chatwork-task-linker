@@ -15,7 +15,4 @@ class ChatworkTaskService
     nil
   end
 
-  def update_gcal_tasks
-    nil
-  end
 end
