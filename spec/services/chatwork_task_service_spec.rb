@@ -6,15 +6,19 @@ RSpec.describe ChatworkTaskService, type: :service do
     @service = ChatworkTaskService.new(user)
   end
 
-  describe 'fetch_chatwork_tasks' do
-    it 'does not retrun nil' do
-      expect(@service.fetch_chatwork_tasks).not_to be_nil
-    end
+  describe '#fetch_chatwork_tasks' do
+    pending 'returns tasks in all rooms @user joins.'
   end
 
-  describe 'fetch_my_chatwork_tasks' do
-    it 'does not retrun nil' do
-      expect(@service.fetch_my_chatwork_tasks).not_to be_nil
-    end
+  describe '#fetch_my_chatwork_tasks' do
+    pending 'returns something.'
+  end
+
+  describe '#fetch_chatwork_tasks_in_room' do
+    pending 'returns tasks in one room @user.'
+  end
+
+  describe '#fetch_chatwork_rooms' do
+    pending 'returns rooms @user joins.'
   end
 end

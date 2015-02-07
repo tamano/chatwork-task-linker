@@ -14,5 +14,4 @@ class ChatworkTaskService
     # fetch_chatwork_tasks.delete_if { |item| item.owner != user.name }
     nil
   end
-
 end

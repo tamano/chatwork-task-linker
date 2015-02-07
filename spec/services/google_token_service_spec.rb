@@ -6,9 +6,7 @@ RSpec.describe GoogleTokenService, type: :service do
     @service = GoogleTokenService.new(user)
   end
 
-  describe 'refresh!' do
-    it 'does not retrun nil' do
-      expect(@service.refresh!).not_to be_nil
-    end
+  describe '#refresh!' do
+    pending 'update token.'
   end
 end
