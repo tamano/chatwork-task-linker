@@ -24,7 +24,15 @@ class ChatworkTaskService
     ChatWork.api_key = @user.setting.chatwork_token
     tasks = ChatWork::Task.get(room_id: room_id)
 
-    tasks.instance_of?(ChatWork::APIError) ? [] : tasks
+    if tasks.instance_of?(ChatWork::APIError)
+      []
+    else
+      tasks.each do |task|
+        task['room_id'] = room_id
+      end
+
+      tasks
+    end
   end
 
   def fetch_rooms
