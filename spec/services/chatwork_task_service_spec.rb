@@ -6,19 +6,19 @@ RSpec.describe ChatworkTaskService, type: :service do
     @service = ChatworkTaskService.new(user)
   end
 
-  describe '#fetch_chatwork_tasks' do
+  describe '#fetch_tasks' do
     pending 'returns tasks in all rooms @user joins.'
   end
 
-  describe '#fetch_my_chatwork_tasks' do
+  describe '#fetch_my_tasks' do
     pending 'returns something.'
   end
 
-  describe '#fetch_chatwork_tasks_in_room' do
+  describe '#fetch_tasks_in_room' do
     pending 'returns tasks in one room @user.'
   end
 
-  describe '#fetch_chatwork_rooms' do
+  describe '#fetch_rooms' do
     pending 'returns rooms @user joins.'
   end
 end
