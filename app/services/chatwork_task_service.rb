@@ -18,7 +18,7 @@ class ChatworkTaskService
   end
 
   def fetch_my_tasks
-    fetch_tasks.select { |item| item.name == @user.name }
+    fetch_tasks.select { |item| item['name'] == @user.name }
   end
 
   def fetch_tasks_in_room(room_id)
