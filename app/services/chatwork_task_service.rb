@@ -1,5 +1,6 @@
 # Service about Task Control
 class ChatworkTaskService
+  include ChatworkRoom
   @user = nil
 
   def initialize(user)
@@ -33,10 +34,5 @@ class ChatworkTaskService
 
       tasks
     end
-  end
-
-  def fetch_rooms
-    ChatWork.api_key = @user.setting.chatwork_token
-    ChatWork::Room.get
   end
 end
