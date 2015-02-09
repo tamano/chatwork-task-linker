@@ -40,6 +40,6 @@ class TaskService
 
   def send_notice_to_owner(task, message)
     sysbot_message = ChatworkMessageService.new(User.find(1))
-    sysbot_message.send_personal_message(task.account_id, message)
+    sysbot_message.send_personal_message(task.name, message)
   end
 end
