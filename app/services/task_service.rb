@@ -2,7 +2,7 @@
 class TaskService
   def notify_limit(notify_before = ['over', 0, 1, 7])
     sysbot_task = ChatworkTaskService.new(User.find(1))
-    tasks = sysbot_task.fetch_chatwork_tasks
+    tasks = sysbot_task.fetch_tasks
 
     notify_before.each do |day_before|
       target_day =
