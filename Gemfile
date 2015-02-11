@@ -74,7 +74,7 @@ gem 'whenever',  require: false
 gem 'bcrypt', '~> 3.1.7'
 
 # Rails/Rack Profiler
-gem 'speed_gun'
+# gem 'speed_gun'
 
 group :development,  :test do
   # Rspec
