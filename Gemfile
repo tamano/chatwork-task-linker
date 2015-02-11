@@ -4,8 +4,8 @@ ruby '2.1.5'
 
 gem 'rails', '4.2.0'
 
-gem 'sqlite3', group: [:development,  :test]
-gem 'mysql2', group: [:production]
+gem 'sqlite3', group: [:development, :test]
+gem 'pg', group: [:production]
 
 #### HTML
 # Haml
