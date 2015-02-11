@@ -99,7 +99,8 @@ group :development,  :test do
   gem 'terminal-notifier-guard'
 
   # OSXの場合のみ、ファイル変更検知のため（それ以外の環境ではポーリングになる）
-  gem 'rb-fsevent',  require: true if RUBY_PLATFORM =~ /darwin/i
+  # TODO: Mac以外はインストールしないようにした方がいいがHerokuでエラーになるのでその制御をしていない。
+  gem 'rb-fsevent'
 
   # Rails application preloader
   gem 'spring'
