@@ -1,26 +1,27 @@
 # Service about controlling tasks
 class TaskService
-  def notify_limit(notify_before = ['over', 0, 1, 7])
-    sysbot_task = ChatworkTaskService.new(User.find(1))
+  def initialize(user)
+    @user = user
+  end
+
+  def notify_limit(notify_before = 'over', comment)
+    sysbot_task = ChatworkTaskService.new(@user)
     tasks = sysbot_task.fetch_tasks
 
-    notify_before.each do |day_before|
-      target_day = get_target_day(day_before)
+    target_day = get_target_day(notify_before)
 
-      target_tasks = check_limit(tasks, target_day)
+    target_tasks = check_limit(tasks, target_day)
 
-      target_tasks.each do |task|
-        message =
-          if target_day == 'over'
-            'over/' + task['body']
-          else
-            'day:' + target_day.to_s + '/' + task['body']
-          end
+    target_tasks.each do |task|
+      message = "#{comment}\n\n"
+      message += "対象のチャット: https://www.chatwork.com/\#!rid#{task['room_id']}\n"
+      message += '[info][title]タスクの内容[/title]' + task['body'] + '[/info]'
 
-        send_notice_to_owner(task, message)
-      end
+      send_notice_to_owner(task, message)
     end
   end
+
+  private
 
   def check_limit(tasks, target_day = 'over')
     result = []
