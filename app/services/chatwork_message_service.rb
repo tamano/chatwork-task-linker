@@ -12,6 +12,11 @@ class ChatworkMessageService
     ChatWork::Message.create(room_id: room_id, body: message)
   end
 
+  def send_message_to(room_id, user_ids, message)
+    to_text = user_ids.map { |v| "[To:#{v}]"}.join
+    send_message(room_id, to_text + "\n" + message)
+  end
+
   def send_personal_message(name, message)
     ChatWork.api_key = @user.setting.chatwork_token
     direct_rooms = fetch_direct_rooms
