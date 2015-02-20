@@ -13,7 +13,7 @@ class ChatworkMessageService
   end
 
   def send_message_to(room_id, user_ids, message)
-    to_text = user_ids.map { |v| "[To:#{v}]"}.join
+    to_text = user_ids.map { |v| "[To:#{v}]" }.join
     send_message(room_id, to_text + "\n" + message)
   end
 
