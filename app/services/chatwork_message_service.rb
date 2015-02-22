@@ -18,10 +18,9 @@ class ChatworkMessageService
   end
 
   def send_personal_message(name, message)
-    ChatWork.api_key = @user.setting.chatwork_token
     direct_rooms = fetch_direct_rooms
 
     target = direct_rooms.detect { |room| room['name'] == name }
-    ChatWork::Message.create(room_id: target['room_id'], body: message)
+    send_message(target['room_id'], message)
   end
 end
