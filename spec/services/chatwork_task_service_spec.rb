@@ -10,10 +10,6 @@ RSpec.describe ChatworkTaskService, type: :service do
     pending 'returns tasks in all rooms @user joins.'
   end
 
-  describe '#fetch_my_tasks' do
-    pending 'returns something.'
-  end
-
   describe '#fetch_tasks_in_room' do
     pending 'returns tasks in one room @user.'
   end

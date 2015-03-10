@@ -1,11 +1,7 @@
 # Service about controlling tasks
 class TaskService
-  def initialize(user)
-    @user = user
-  end
-
   def notify_limit(notify_before = 'over', comment)
-    sysbot_task = ChatworkTaskService.new(@user)
+    sysbot_task = ChatworkTaskService.new
     tasks = sysbot_task.fetch_tasks
 
     target_day = get_target_day(notify_before)
@@ -36,7 +32,7 @@ class TaskService
   end
 
   def send_notice_to_owner(task, message)
-    sysbot_message = ChatworkMessageService.new(User.find(1))
+    sysbot_message = ChatworkMessageService.new
     sysbot_message.send_personal_message(task['account']['name'], message)
     # TODO: using task['name'] as a target identifier is not good. should use member of chatroom.
   end
