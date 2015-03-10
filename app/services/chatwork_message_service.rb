@@ -1,14 +1,9 @@
 # Service about message Control
 class ChatworkMessageService
   include ChatworkRoom
-  @user = nil
-
-  def initialize(user)
-    @user = user
-  end
 
   def send_message(room_id, message)
-    ChatWork.api_key = @user.setting.chatwork_token
+    ChatWork.api_key = Rails.application.secrets.chatwork_token
     ChatWork::Message.create(room_id: room_id, body: message)
   end
 

@@ -3,7 +3,7 @@ module ChatworkRoom
   extend ActiveSupport::Concern
 
   def fetch_rooms
-    ChatWork.api_key = @user.setting.chatwork_token
+    ChatWork.api_key = Rails.application.secrets.chatwork_token
     ChatWork::Room.get
   end
 
