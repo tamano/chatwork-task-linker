@@ -43,9 +43,6 @@ gem 'quiet_assets'
 gem 'rails-flog'
 
 #### else
-gem 'twitter-bootswatch-rails', '~> 3.1.1'
-gem 'twitter-bootswatch-rails-helpers'
-
 # Presenter Layer
 gem 'draper'
 
@@ -55,14 +52,6 @@ gem 'dotenv-rails'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-
-# Pagenation
-gem 'kaminari'
-
-# 認証
-gem 'devise'
-gem 'omniauth'
-gem 'omniauth-google-oauth2'
 
 # 論理削除
 gem 'kakurenbo'
@@ -83,7 +72,7 @@ group :development,  :test do
 
   # fixtureの代わり
   gem 'factory_girl_rails'
-  gem 'database_cleaner',  github: 'bmabey/database_cleaner'
+  gem 'database_cleaner'
 
   # コーディング規約
   gem 'rubocop'
