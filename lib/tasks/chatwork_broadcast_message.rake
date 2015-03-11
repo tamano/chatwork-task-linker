@@ -1,8 +1,8 @@
 namespace :chatwork_broadcast_message do
   desc 'Send message to everyone.'
   task :send, [:message] => :environment do |_task, args|
-    room_id = ENV['CHATWORK_SYSBOT_BROADCAST_ROOM_ID']
-    user_ids = ENV['CHATWORK_SYSBOT_BROADCAST_TO'].split(',')
+    room_id = Rails.application.secrets.chatwork_broadcast_room_id
+    user_ids = Rails.application.secrets.chatwork_broadcast_to_user_ids.split(',')
     message = args.message
 
     service = ChatworkMessageService.new
