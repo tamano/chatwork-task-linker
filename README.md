@@ -11,4 +11,4 @@ It works through ChatWork API.
 - CHATWORK_SYSBOT_BROADCAST_ROOM_ID
   - Room ID of Chatwork which used to send message to everyone.
 - CHATWORK_SYSBOT_BROADCAST_TO
-  - User IDs(seperated with `:`) of everyone.
+  - User IDs(separeted with `:`) of everyone.
