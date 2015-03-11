@@ -116,4 +116,4 @@ group :development,  :test do
   gem 'hirb-unicode'
 end
 
-gem 'chatwork'
+gem 'chatwork', '0.1.2'
