@@ -77,6 +77,8 @@ group :development,  :test do
   # コーディング規約
   gem 'rubocop'
 
+  gem 'rails_best_practices'
+
   # gem 'capistrano-rails'
   # gem 'cucumber-rails',  require: false,  git: 'https://github.com/cucumber/cucumber-rails.git'
   # gem 'capybara',  git: 'git://github.com/jnicklas/capybara.git'
