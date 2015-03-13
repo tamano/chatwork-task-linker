@@ -11,7 +11,7 @@ module ChatworkRoom
     fetch_rooms.select { |item| item['type'] == 'direct' }
   end
 
-  def fetch_room_members (room_id)
+  def fetch_room_members(room_id)
     ChatWork.api_key = Rails.application.secrets.chatwork_token
     ChatWork::Member.get(room_id: room_id)
   end
