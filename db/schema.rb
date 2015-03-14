@@ -11,7 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150101151029) do
+ActiveRecord::Schema.define(version: 20150314153907) do
+
+  create_table "notify_rules", force: :cascade do |t|
+    t.integer  "target_room_id",   null: false
+    t.integer  "target_member_id", null: false
+    t.time     "target_time",      null: false
+    t.string   "message",          null: false
+    t.integer  "target_day"
+    t.integer  "target_date"
+    t.string   "type"
+    t.datetime "executing_at"
+    t.datetime "last_executed_at"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "notify_rules", ["executing_at"], name: "index_notify_rules_on_executing_at"
+  add_index "notify_rules", ["type"], name: "index_notify_rules_on_type"
 
   create_table "tasks", force: :cascade do |t|
     t.integer  "user_id",          null: false
