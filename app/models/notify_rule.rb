@@ -6,7 +6,7 @@ class NotifyRule < ActiveRecord::Base
   validates :message, presence: true
   validates :target_time, presence: true
 
-  def next
-    nil
-  end
+  # def next
+  #   nil
+  # end
 end
