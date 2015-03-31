@@ -8,17 +8,17 @@ RSpec.describe NotifyRuleDaily, type: :model do
       end
 
       it 'returns executing_at if executing_at is not past' do
-        Time.stub(:now).and_return(Time.new(2015, 3, 29, 11, 00))
+        allow(Time).to receive(:now).and_return(Time.new(2015, 3, 29, 11, 00))
         expect(@rule.next).to eq(Time.parse('2015-03-31 02:00'))
       end
 
       it 'returns target_time of current day if executing_at is past and target_time of current_day is past' do
-        Time.stub(:now).and_return(Time.new(2015, 3, 31, 11, 00))
+        allow(Time).to receive(:now).and_return(Time.new(2015, 3, 31, 11, 00))
         expect(@rule.next).to eq(Time.parse('2015-04-01 09:00'))
       end
 
       it 'returns target_time of current day if executing_at is past and target_time of current_day is not past' do
-        Time.stub(:now).and_return(Time.new(2015, 3, 31, 2, 00))
+        allow(Time).to receive(:now).and_return(Time.new(2015, 3, 31, 2, 00))
         expect(@rule.next).to eq(Time.parse('2015-03-31 09:00'))
       end
     end
@@ -29,12 +29,12 @@ RSpec.describe NotifyRuleDaily, type: :model do
       end
 
       it 'returns target_time of current day if it is not past' do
-        Time.stub(:now).and_return(Time.new(2015, 3, 13, 8, 59))
+        allow(Time).to receive(:now).and_return(Time.new(2015, 3, 13, 8, 59))
         expect(@rule.next).to eq(Time.parse('2015-03-13 9:00'))
       end
 
       it 'returns target_time of next day if it is past' do
-        Time.stub(:now).and_return(Time.new(2015, 3, 13, 9, 0))
+        allow(Time).to receive(:now).and_return(Time.new(2015, 3, 13, 9, 0))
         expect(@rule.next).to eq(Time.parse('2015-03-14 9:00'))
       end
     end
