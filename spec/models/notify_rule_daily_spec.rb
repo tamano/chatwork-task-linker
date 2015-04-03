@@ -12,7 +12,7 @@ RSpec.describe NotifyRuleDaily, type: :model do
         expect(@rule.next).to eq(Time.parse('2015-03-31 02:00'))
       end
 
-      it 'returns target_time of current day if executing_at is past and target_time of current_day is past' do
+      it 'returns target_time of next day if executing_at is past and target_time of current_day is past' do
         allow(Time).to receive(:now).and_return(Time.new(2015, 3, 31, 11, 00))
         expect(@rule.next).to eq(Time.parse('2015-04-01 09:00'))
       end
