@@ -21,13 +21,11 @@ ActiveRecord::Schema.define(version: 20150314153907) do
     t.integer  "target_day"
     t.integer  "target_date"
     t.string   "type"
-    t.datetime "executing_at"
     t.datetime "last_executed_at"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
 
-  add_index "notify_rules", ["executing_at"], name: "index_notify_rules_on_executing_at"
   add_index "notify_rules", ["type"], name: "index_notify_rules_on_type"
 
   create_table "tasks", force: :cascade do |t|

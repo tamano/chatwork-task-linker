@@ -3,8 +3,6 @@ class NotifyRuleDaily < NotifyRule
   def next
     current_time = Time.now
 
-    return executing_at if executing_at && executing_at > current_time
-
     candidate_executing_at = Time.new(
       current_time.year, current_time.month, current_time.day, target_time.hour, target_time.min)
 

@@ -8,7 +8,6 @@ class CreateNotifyRules < ActiveRecord::Migration
       t.integer :target_day
       t.integer :target_date
       t.string :type, index: true
-      t.datetime :executing_at, index: true
       t.datetime :last_executed_at
 
       t.timestamps null: false
