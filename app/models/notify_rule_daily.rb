@@ -1,12 +1,15 @@
 # NotifyRuleDaily
 class NotifyRuleDaily < NotifyRule
-  def next
-    current_time = Time.now
+  public_class_method :new
 
-    candidate_executing_at = Time.new(
-      current_time.year, current_time.month, current_time.day, target_time.hour, target_time.min)
+  private
 
-    candidate_executing_at += (60 * 60 * 24) while current_time >= candidate_executing_at
-    candidate_executing_at
+  def recent_target(ref_time)
+    Time.new(ref_time.year, ref_time.month, ref_time.day, target_time.hour, target_time.min)
+  end
+
+  def target_interval_sec
+    # one day
+    (60 * 60 * 24)
   end
 end

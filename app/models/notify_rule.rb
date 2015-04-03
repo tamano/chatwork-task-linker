@@ -6,7 +6,23 @@ class NotifyRule < ActiveRecord::Base
   validates :message, presence: true
   validates :target_time, presence: true
 
+  private_class_method :new
+
   def next
-    nil
+    current_time = Time.now
+
+    target = recent_target(current_time)
+    target += target_interval_sec while current_time >= target
+    target
+  end
+
+  private
+
+  def recent_target
+    raise "You can't call get_recent_target."
+  end
+
+  def target_interval_sec
+    raise "You can't call target_interval_sec."
   end
 end
