@@ -2,8 +2,7 @@ require 'rails_helper'
 
 RSpec.describe ChatworkMessageService, type: :service do
   before :each do
-    user = nil
-    @service = ChatworkMessageService.new(user)
+    @service = ChatworkMessageService.new
   end
 
   describe '#send_message' do

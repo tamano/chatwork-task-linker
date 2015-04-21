@@ -2,8 +2,7 @@ require 'rails_helper'
 
 RSpec.describe ChatworkTaskService, type: :service do
   before :each do
-    user = nil
-    @service = ChatworkTaskService.new(user)
+    @service = ChatworkTaskService.new
   end
 
   describe '#fetch_tasks' do
