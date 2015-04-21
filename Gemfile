@@ -46,6 +46,7 @@ gem 'rails-flog'
 # Presenter Layer
 gem 'draper'
 
+# .envで環境変数を設定する
 gem 'dotenv-rails'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
