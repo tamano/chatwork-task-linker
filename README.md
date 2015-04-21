@@ -1,6 +1,6 @@
 # chatwork-secretary
 
-[![Circle CI](https://circleci.com/gh/tamano/chatwork-secretary.svg?style=svg)](https://circleci.com/gh/tamano/chatwork-secretary) [![Code Climate](https://codeclimate.com/github/tamano/chatwork-secretary/badges/gpa.svg)](https://codeclimate.com/github/tamano/chatwork-secretary) [![Dependency Status](https://gemnasium.com/tamano/chatwork-task-linker.svg)](https://gemnasium.com/tamano/chatwork-task-linker)
+[![Circle CI](https://circleci.com/gh/tamano/chatwork-secretary.svg?style=svg)](https://circleci.com/gh/tamano/chatwork-secretary) [![Code Climate](https://codeclimate.com/github/tamano/chatwork-secretary/badges/gpa.svg)](https://codeclimate.com/github/tamano/chatwork-secretary) [![Dependency Status](https://gemnasium.com/tamano/chatwork-secretary.svg)](https://gemnasium.com/tamano/chatwork-secretary)
 
 This program provides some alert or notify function to ChatWork.
 It works through ChatWork API.
